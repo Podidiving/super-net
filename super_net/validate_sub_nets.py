@@ -23,7 +23,7 @@ def get_configs():
     parser.add_argument("-d", "--dump", type=str, required=False, default=None, help="File to dump results to")
 
     args = parser.parse_args()
-    return safitty.load(args.config), dump
+    return safitty.load(args.config), args.dump
 
 
 if __name__ == "__main__":

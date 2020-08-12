@@ -2,7 +2,7 @@
 
 set -e
 
-#CUDA_VISIBLE_DEVICES=0 python3.6 super_net/train_super_net.py -c configs/train_super_net.yml
+CUDA_VISIBLE_DEVICES=0 python3.6 super_net/train_super_net.py -c configs/train_super_net.yml
 
 CUDA_VISIBLE_DEVICES=0 python3.6 super_net/train_sub_net.py -c configs/train_sub_net_conv3x3_conv5x5.yml
 CUDA_VISIBLE_DEVICES=0 python3.6 super_net/train_sub_net.py -c configs/train_sub_net_conv5x5_conv3x3.yml
