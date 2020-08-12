@@ -20,7 +20,14 @@ def seed_all():
 def get_configs():
     parser = ArgumentParser()
     parser.add_argument("-c", "--config", type=str, required=True)
-    parser.add_argument("-d", "--dump", type=str, required=False, default=None, help="File to dump results to")
+    parser.add_argument(
+        "-d",
+        "--dump",
+        type=str,
+        required=False,
+        default=None,
+        help="File to dump results to",
+    )
     args = parser.parse_args()
     return safitty.load(args.config), args.dump
 
@@ -51,4 +58,6 @@ if __name__ == "__main__":
             print(f"{model_name} : {averaged_val_acc}, {averaged_val_loss}")
             if dump is not None:
                 with open(dump, "a") as file:
-                    file.write(f"{model_name} : {averaged_val_acc}, {averaged_val_loss}\n")
+                    file.write(
+                        f"{model_name} : {averaged_val_acc}, {averaged_val_loss}\n"
+                    )

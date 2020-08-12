@@ -19,7 +19,14 @@ def seed_all():
 def get_configs():
     parser = ArgumentParser()
     parser.add_argument("-c", "--config", type=str, required=True)
-    parser.add_argument("-d", "--dump", type=str, required=False, default=None, help="File to dump results to")
+    parser.add_argument(
+        "-d",
+        "--dump",
+        type=str,
+        required=False,
+        default=None,
+        help="File to dump results to",
+    )
 
     args = parser.parse_args()
     return safitty.load(args.config), args.dump
@@ -33,10 +40,7 @@ if __name__ == "__main__":
         **configs["test_dataloader_parameters"]
     )
     criterion = get_criterion(configs)
-    model = sample_model(
-        model_path=configs["model_path"],
-        **model_parameters,
-    )
+    model = sample_model(model_path=configs["model_path"], **model_parameters,)
     model_name = f"{configs['model_parameters']['conv_1_choice']}_{configs['model_parameters']['conv_2_choice']}"
     model, optimizer, _, device = prepare_model(model, configs)
     averaged_val_loss, averaged_val_acc = validate_epoch(
@@ -45,4 +49,6 @@ if __name__ == "__main__":
     print(f"{model_name} : {averaged_val_acc}, {averaged_val_loss}")
     if dump is not None:
         with open(dump, "a") as file:
-            file.write(f"{model_name} : {averaged_val_acc}, {averaged_val_loss}\n")
+            file.write(
+                f"{model_name} : {averaged_val_acc}, {averaged_val_loss}\n"
+            )
