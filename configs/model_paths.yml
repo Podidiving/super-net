@@ -1,0 +1,4 @@
+conv3x3_conv3x3: ./model_conv3x3_conv3x3.pth
+conv3x3_conv5x5: ./model_conv3x3_conv5x5.pth
+conv5x5_conv5x5: ./model_conv5x5_conv5x5.pth
+conv5x5_conv3x3: ./model_conv5x5_conv3x3.pth

@@ -1,0 +1,35 @@
+model_path: ./model_conv3x3_conv3x3.pth
+tensorboard_log_dir: ./runs/conv3x3_conv3x3
+number_train_epochs: 100
+
+train_dataloader_parameters:
+  train_root: ./train_data
+  batch_size: 256
+  num_workers: 10
+
+test_dataloader_parameters:
+  test_root: ./test_data
+  batch_size: 256
+  num_workers: 10
+
+model_parameters:
+  in_features: 1
+  hidden_features: 32
+  out_conv_features: 32
+  out_linear_features: 64
+  num_classes: 10
+  image_size: 28
+  conv_1_choice: conv3x3
+  conv_2_choice: conv3x3
+  verbose: False
+
+criterion_name: CrossEntropyLoss
+criterion_parameters: null
+
+optimizer_name: SGD
+optimizer_parameters:
+  lr: 0.001
+  momentum: 0.9
+
+lr_scheduler_name: null
+lr_scheduler_parameters: null
