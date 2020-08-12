@@ -43,4 +43,7 @@ Test Task @ [MIL](https://github.com/machine-intelligence-laboratory/MILTestTask
     |conv3x3_conv3x3|0.00015|0.9865|
     |conv3x3_conv5x5|0.001|0.8923|
     |conv5x5_conv3x3|0.001|0.892|
-    |conv5x5_conv5x5|0.00014|0.9886|
+    |conv5x5_conv5x5|0.00014|**0.9886**|
+    
+    Despite the fact, that the best accuracy score has the model trained from scratch (`conv5x5_conv5x5`)
+    SuperNet approach gives us more relatively good models in almost the same time.
