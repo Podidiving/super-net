@@ -13,15 +13,15 @@ Test Task @ [MIL](https://github.com/machine-intelligence-laboratory/MILTestTask
     
     If you have any troubles with config file, you could look into `configs/train_super_net.yml`. It has comments to help you.
     
-    0. Satisfy `requirements.txt`
-    1. Training
+    1. Satisfy `requirements.txt`
+    2. Training
         1. To train super net from scratch: `python3 super_net/train_super_net.py -c configs/train_super_net.yml`
         2. To train specific sub network from scratch: `python3 super_net/train_sub_net.py -c configs/<choose your config here>`
-    2. Evaluation
+    3. Evaluation
         1. Evaluate super net `python3 super_net/validate_sampled_nets.py -c configs/train_super_net.yml`
         2. Evaluate sub nets `python3 super_net/validate_sub_nets.py -c configs/<choose your config here> -p configs/model_paths.yml`
         **Note** if you changed model path in `configs/<choose your config here>` you should change corresponding model path in `configs/model_paths.yml`
-    3. You can look at `run_all.sh`. It is an example script for running the whole process: every training and every validation.
+    4. You can look at `run_all.sh`. It is an example script for running the whole process: every training and every validation.
 
 5. **Results**
     
