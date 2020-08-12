@@ -6,9 +6,9 @@ from torch.utils.tensorboard import SummaryWriter
 
 import safitty
 
-from mnist_dataloader import get_train_dataloader, get_test_dataloader
+from utils.mnist_dataloader import get_train_dataloader, get_test_dataloader
 from super_net import sample_random_net, sample_model, save_super_net
-from train_utils import (
+from utils.train_utils import (
     prepare_model,
     train_epoch,
     validate_epoch,

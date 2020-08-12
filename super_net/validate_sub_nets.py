@@ -1,13 +1,12 @@
 from argparse import ArgumentParser
 
-import os
 import safitty
 import torch
 import numpy as np
 
-from mnist_dataloader import get_test_dataloader
+from utils.mnist_dataloader import get_test_dataloader
 from super_net import sample_model
-from train_utils import get_criterion, prepare_model, validate_epoch
+from utils.train_utils import get_criterion, prepare_model, validate_epoch
 
 
 def seed_all():
