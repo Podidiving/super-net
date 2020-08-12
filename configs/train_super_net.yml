@@ -1,18 +1,18 @@
-model_path: ./model.pth
-tensorboard_log_dir: ./runs/super_net
-number_train_epochs: 100
+model_path: ./model.pth  # REQUIRED. Path to save weights
+tensorboard_log_dir: ./runs/super_net  # OPTIONAL. If you want tensorboard logger
+number_train_epochs: 100  # OPTIONAL. Number of epochs. By default equals 200
 
-train_dataloader_parameters:
-  train_root: ./train_data
-  batch_size: 256
-  num_workers: 10
+train_dataloader_parameters:  # REQUIRED
+  train_root: ./train_data  # REQUIRED
+  batch_size: 256  # OPTIONAL
+  num_workers: 10  # OPTIONAL
 
-test_dataloader_parameters:
-  test_root: ./test_data
-  batch_size: 256
-  num_workers: 10
+test_dataloader_parameters:  # REQUIRED
+  test_root: ./test_data  # REQUIRED
+  batch_size: 256  # OPTIONAL
+  num_workers: 10  # OPTIONAL
 
-model_parameters:
+model_parameters:  # OPTIONAL. see super_net/super_net.py
   in_features: 1
   hidden_features: 32
   out_conv_features: 32
@@ -21,13 +21,13 @@ model_parameters:
   image_size: 28
   verbose: False
 
-criterion_name: CrossEntropyLoss
-criterion_parameters: null
+criterion_name: CrossEntropyLoss  # REQUIRED Name from torch.nn
+criterion_parameters: null  # OPTIONAL
 
-optimizer_name: SGD
-optimizer_parameters:
+optimizer_name: SGD  # REQUIRED. Name from torch.optim
+optimizer_parameters:  # OPTIONAL
   lr: 0.001
   momentum: 0.9
 
-lr_scheduler_name: null
-lr_scheduler_parameters: null
+lr_scheduler_name: null  # OPTIONAL. Name from torch.optim.lr_scheduler
+lr_scheduler_parameters: null  # OPTIONAL
